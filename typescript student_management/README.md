@@ -35,9 +35,8 @@ A simple web application to manage students and calculate their grades based on 
    This will generate an `app.js` file in the same directory.
 
 2. **Open the Application**:
-   You can open the `index.html` file directly in any modern web browser:
-   - Double-click `index.html` from your file explorer.
-   - Or, use a local development server (like Live Server in VS Code) for a better experience.
+   - **Recommended**: Right-click `index.html` and select **"Open with Live Server"** (if using VS Code) for the best experience.
+   - Alternatively, open `index.html` directly in any modern web browser.
 
 ## Technical Details
 - The project uses TypeScript classes and inheritance.
