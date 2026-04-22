@@ -6,14 +6,24 @@ const path = require("path");
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
+
+// Route to serve index.html for the root path
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
 
 const Employee = require("./models/Employee");
 
 // Connect MongoDB
 mongoose.connect("mongodb://127.0.0.1:27017/employeesDB")
-  .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+  .then(() => console.log("✅ MongoDB Connected Successfully"))
+  .catch(err => {
+    console.error("❌ MongoDB Connection Error:", err.message);
+    process.exit(1); // Exit if DB connection fails
+  });
+
 
 // GET all employees
 app.get("/employees", async (req, res) => {
