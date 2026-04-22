@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Large Text File Analyzer</h1>
+
+    <input type="file" id="fileInput" accept=".txt">
+    <button onclick="uploadFile()">Analyze File</button>
+
+    <div class="result">
+      <p><strong>Words:</strong> <span id="words">0</span></p>
+      <p><strong>Lines:</strong> <span id="lines">0</span></p>
+      <p><strong>Characters:</strong> <span id="chars">0</span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

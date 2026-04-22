@@ -1,0 +1,5 @@
+This is a test file.
+It has multiple lines.
+Word count should be 12.
+Line count should be 3.
+Character count should be around 75.

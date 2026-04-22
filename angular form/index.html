@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="studentApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+
+  <!-- AngularJS CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="StudentController">
+
+  <div class="container">
+    <h1>Student Registration Form</h1>
+
+    <form name="studentForm" ng-submit="submitForm()" novalidate>
+
+      <!-- Name -->
+      <input
+        type="text"
+        name="name"
+        placeholder="Enter Name"
+        ng-model="student.name"
+        required>
+
+      <div class="error"
+           ng-show="studentForm.name.$touched && studentForm.name.$invalid">
+        Name is required
+      </div>
+
+      <!-- Email -->
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter Email"
+        ng-model="student.email"
+        required>
+
+      <div class="error"
+           ng-show="studentForm.email.$touched && studentForm.email.$invalid">
+        Enter a valid email
+      </div>
+
+      <!-- Age -->
+      <input
+        type="number"
+        name="age"
+        placeholder="Enter Age"
+        ng-model="student.age"
+        min="18"
+        max="30"
+        required>
+
+      <div class="error"
+           ng-show="studentForm.age.$touched && studentForm.age.$invalid">
+        Age must be between 18 and 30
+      </div>
+
+      <!-- Course -->
+      <select
+        name="course"
+        ng-model="student.course"
+        required>
+        <option value="">Select Course</option>
+        <option>BCA</option>
+        <option>BSc IT</option>
+        <option>BCom</option>
+        <option>MCA</option>
+      </select>
+
+      <div class="error"
+           ng-show="studentForm.course.$touched && studentForm.course.$invalid">
+        Please select a course
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" ng-disabled="!studentForm.$valid">
+        Register
+      </button>
+    </form>
+
+    <!-- Display Entered Data -->
+    <div class="result" ng-if="submitted">
+      <h2>Entered Student Data</h2>
+
+      <p><strong>Name:</strong> {{ savedStudent.name }}</p>
+      <p><strong>Email:</strong> {{ savedStudent.email }}</p>
+      <p><strong>Age:</strong> {{ savedStudent.age }}</p>
+      <p><strong>Course:</strong> {{ savedStudent.course }}</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

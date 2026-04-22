@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics Reports</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="trackPage('Reports'); generateReport()">
+
+  <header>
+    <h1>Analytics Reports</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="reports.html">Reports</a>
+    </nav>
+  </header>
+
+  <section class="report-box">
+    <h2>Website Traffic Report</h2>
+
+    <div class="report-item">
+      <span>Total Visits:</span>
+      <strong id="totalVisits">0</strong>
+    </div>
+
+    <div class="report-item">
+      <span>Home Page Views:</span>
+      <strong id="homeViews">0</strong>
+    </div>
+
+    <div class="report-item">
+      <span>Tools Page Views:</span>
+      <strong id="toolsViews">0</strong>
+    </div>
+
+    <div class="report-item">
+      <span>Reports Page Views:</span>
+      <strong id="reportsViews">0</strong>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
